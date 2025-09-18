@@ -1,0 +1,11 @@
+Exact experimental results:
+
+All models use a 2k decoding length.
+gemini-flash has a config for “thinking” mode. I disabled this since it’s not clear what the default config setting is nor how thinking impacts gemini-flash which could impact reproducibility
+gemini-pro has thinking which is not possible to disable
+
+
+All gemma class models have no thinking
+Gemini-flash-lite has no thinking
+
+Gemini Pro is taking a really long time to run. I'm not sure if this is because some rate limits that I don't understand, but in theory we have a 2k requests per minute api key.
