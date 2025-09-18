@@ -49,7 +49,8 @@ def main():
     tfrecord_paths = {
         'congruent': 'congruent_incongruent_1000/test/comparison_congruent_size_test.tfrecord',
         'incongruent': 'congruent_incongruent_1000/test/comparison_incongruent_size_test.tfrecord',
-        'random': 'congruent_incongruent_1000/test/comparison_random_string_size_test.tfrecord'
+        'random': 'congruent_incongruent_1000/test/comparison_random_string_size_test.tfrecord',
+        'permuted': 'congruent_incongruent_1000/test/comparison_permuted_size_test.tfrecord'
     }
     
     # Define all conditions
@@ -71,7 +72,7 @@ def main():
     # Generate all prompts
     all_prompts = []
     
-    for item_type in ['congruent', 'incongruent', 'random']:
+    for item_type in ['congruent', 'incongruent', 'random', 'permuted']:
         print(f"Processing {item_type} items...")
         
         # Read questions from tfrecord
@@ -98,7 +99,7 @@ def main():
     print(f"Saved to {output_file}")
     
     # Verify counts
-    expected_count = 3 * 9 * 1000  # 3 item types × 9 conditions × 1000 examples
+    expected_count = 4 * 9 * 1000  # 3 item types × 9 conditions × 1000 examples
     print(f"Expected: {expected_count}, Got: {len(all_prompts)}")
 
 if __name__ == "__main__":
